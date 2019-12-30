@@ -1,13 +1,21 @@
 Package: ravelRy
-Title: What the Package Does (One Line, Title Case)
+Title: An Interface to the Ravelry API 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Kaylin",
+           family = "Pavlik",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "walkerkq2@gmail.com")
+Description: ravelRy is an R package that provides access to the Ravelry API. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    spelling,
+    testthat
+Language: en-US
+Imports: 
+    httr,
+    jsonlite,
+    dplyr
+RoxygenNote: 6.1.1
