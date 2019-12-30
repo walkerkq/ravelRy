@@ -1,4 +1,7 @@
 
+This package is under
+development.
+
 # ravelRy <img src="man/figures/ravelRy_hex.png" width="160px" align="right" />
 
 ravelRy is an R package that provides access to the [Ravelry
