@@ -4,7 +4,9 @@
 #'
 #' @param id designer id
 #'
-#' @return tibble
+#' @return tibble with name, notes, count of patterns, etc.
+#'
+#' @examples get_designer(id = 1)
 #'
 #' @export
 #'

@@ -7,7 +7,9 @@
 #' @param page_size number of results to retrieve; defaults to 50
 #' @param sort options: `best`, `added`, `favorites`
 #'
-#' @return tibble
+#' @return tibble containing group information, like name, created_at, short_description, etc.
+#'
+#' @examples search_groups(query = 'minneapolis')
 #'
 #' @export
 #'

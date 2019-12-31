@@ -6,7 +6,9 @@
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 100
 #'
-#' @return Tibble containing basic pattern details, some nested
+#' @return tibble containing basic pattern details, some nested
+#'
+#' @examples search_patterns(query = 'cowl')
 #'
 #' @export
 #'
@@ -27,7 +29,9 @@ search_patterns <- function(query, page = NULL, page_size = NULL){
 #'
 #' @param ids one or more `pattern_id`s
 #'
-#' @return tibble
+#' @return tibble containing pattern details, like yardage, gauge, count of comments, ratings, etc.
+#'
+#' @examples get_patterns(ids = c(600, 601))
 #'
 #' @export
 #'
@@ -51,7 +55,10 @@ get_patterns <- function(ids){
 #' @param page_size number of results to retrieve; defaults to 25, max is 100
 #' @param sort sort order; options are `time`, `helpful`
 #' (and `time_`, `helpful_` for descending sort)
+#'
 #' @return tibble
+#'
+#' @examples \dontrun{get_pattern_comments(id = 600, page_size = 10)}
 #'
 #' @export
 
@@ -72,7 +79,9 @@ get_pattern_comments <- function(id, page = NULL, page_size = NULL, sort = NULL)
 #'
 #' This function retrieves pattern categories.
 #'
-#' @return tibble
+#' @return nested tibble containing category and sub-categories for patterns.
+#'
+#' @examples get_pattern_categories()
 #'
 #' @export
 #'

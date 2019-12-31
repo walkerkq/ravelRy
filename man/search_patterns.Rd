@@ -14,8 +14,12 @@ search_patterns(query, page = NULL, page_size = NULL)
 \item{page_size}{number of results to retrieve; defaults to 100}
 }
 \value{
-Tibble containing basic pattern details, some nested
+tibble containing basic pattern details, some nested
 }
 \description{
 This function retrieves a list of pattern ids and basic details based on search terms.
+}
+\examples{
+search_patterns(query = 'cowl')
+
 }

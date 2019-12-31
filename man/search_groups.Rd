@@ -16,8 +16,12 @@ search_groups(query, page = NULL, page_size = NULL, sort = NULL)
 \item{sort}{options: `best`, `added`, `favorites`}
 }
 \value{
-tibble
+tibble containing group information, like name, created_at, short_description, etc.
 }
 \description{
 This function retrieves groups based on search terms.
+}
+\examples{
+search_groups(query = 'minneapolis')
+
 }

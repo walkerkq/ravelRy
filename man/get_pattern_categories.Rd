@@ -7,8 +7,12 @@
 get_pattern_categories()
 }
 \value{
-tibble
+nested tibble containing category and sub-categories for patterns.
 }
 \description{
 This function retrieves pattern categories.
+}
+\examples{
+get_pattern_categories()
+
 }

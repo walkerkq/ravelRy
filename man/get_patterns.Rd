@@ -10,8 +10,12 @@ get_patterns(ids)
 \item{ids}{one or more `pattern_id`s}
 }
 \value{
-tibble
+tibble containing pattern details, like yardage, gauge, count of comments, ratings, etc.
 }
 \description{
 This function retrieves details for one or multiple patterns using the pattern id.
+}
+\examples{
+get_patterns(ids = c(600, 601))
+
 }

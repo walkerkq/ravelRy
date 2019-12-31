@@ -7,7 +7,9 @@
 #' @param page_size number of results to retrieve; defaults to 100
 #' @param sort options: `best`, `rating`, `projects`
 #'
-#' @return Tibble containing basic pattern details, some nested
+#' @return tibble containing basic pattern details, some nested
+#'
+#' @examples search_yarn(query = 'cascade', page_size = 10)
 #'
 #' @export
 #'
@@ -29,7 +31,9 @@ search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL){
 #'
 #' @param ids one or more `yarn_id`s
 #'
-#' @return tibble
+#' @return tibble containing yarn details like company, gauge, grams, texture, needle sizes, ratings, etc.
+#'
+#' @examples get_yarns(ids = c(600, 601))
 #'
 #' @export
 #'
@@ -48,7 +52,9 @@ get_yarns <- function(ids){
 #'
 #' This function retrieves yarn attritube groups.
 #'
-#' @return tibble
+#' @return tibble containing current attribute groups for yarn.
+#'
+#' @examples get_yarn_attribute_groups()
 #'
 #' @export
 #'
@@ -69,7 +75,9 @@ get_yarn_attribute_groups <- function(){
 #' @param page_size number of results to retrieve; defaults to 48
 #' @param sort options: `best`
 #'
-#' @return tibble
+#' @return tibble containing company details
+#'
+#' @examples search_yarn_companies(query = 'lion')
 #'
 #' @export
 #'

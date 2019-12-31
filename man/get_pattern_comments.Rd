@@ -22,3 +22,7 @@ tibble
 \description{
 This function retrieves comments for a pattern using the pattern id.
 }
+\examples{
+\dontrun{get_pattern_comments(id = 600, page_size = 10)}
+
+}
