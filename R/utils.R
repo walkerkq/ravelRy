@@ -3,7 +3,7 @@ api_url <- "https://api.ravelry.com/"
 
 fromJSONtoTibble <- function(json, level = 1) {
 
-  df <- jsonlite::fromJSON(content(json, type = 'text', encoding = 'utf-8'))
+  df <- jsonlite::fromJSON(httr::content(json, type = 'text', encoding = 'utf-8'))
 
   # some methods nest the content deeper than others
   if(level == 2) {

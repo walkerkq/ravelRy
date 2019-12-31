@@ -62,7 +62,7 @@ get_yarn_attribute_groups <- function(){
 
 #' Search yarn companies
 #'
-#' This function retrieves yarn attritube groups.
+#' This function retrieves yarn companies based on search terms.
 #'
 #' @param query search string
 #' @param page result page to retrieve; defaults to first page
