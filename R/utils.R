@@ -1,9 +1,28 @@
+fromJSONtoTibble <- function(json) {
+
+  df <- jsonlite::fromJSON(httr::content(json, as = 'text', encoding = 'utf-8'), flatten = TRUE)
+
+  #list_df <- purrr::map_if(df[[1]], is.data.frame, list)
+
+  tb <- tibble::as_tibble(df[[1]])
+
+  tb
+
+}
+
+# df_cols <- names(df[[1]][[1]])
+# df_transformed <- data.table::rbindlist(df, fill = TRUE, use.names = TRUE)
+# df_transformed <- df_transformed %>%
+#   t() %>%
+#   as.data.frame() %>%
+#   magrittr::set_colnames(df_cols)
+
 lists_to_modify <- c('min_needle_size', 'yarn_company', 'yarn_weight', 'min_hook_size', 'max_needle_size', 'max_hook_size', #get_yarns
                      'craft', 'pattern_type', 'pattern_author', # get_patterns
                      'country', 'state' # get_shop
 )
 
-fromJSONtoTibble <- function(json, level = 1) {
+fromJSONtoTibble_mult <- function(json, level = 1) {
 
   df <- jsonlite::fromJSON(httr::content(json, as = 'text', encoding = 'utf-8'))
 
@@ -24,10 +43,3 @@ fromJSONtoTibble <- function(json, level = 1) {
   tb
 
 }
-
-# df_cols <- names(df[[1]][[1]])
-# df_transformed <- data.table::rbindlist(df, fill = TRUE, use.names = TRUE)
-# df_transformed <- df_transformed %>%
-#   t() %>%
-#   as.data.frame() %>%
-#   magrittr::set_colnames(df_cols)

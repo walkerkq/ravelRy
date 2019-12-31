@@ -27,4 +27,5 @@ search_patterns(query = 'cowl')
 
 # with site search parameters
 search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
+
 }

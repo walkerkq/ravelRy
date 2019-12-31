@@ -27,7 +27,10 @@ search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
                                        sort = sort,
                                        ...))
 
-  fromJSONtoTibble(response)
+  response_tibble <- fromJSONtoTibble(response)
+
+  response_tibble %>%
+    select(-starts_with('first_photo'), -.data$personal_attributes)
 
 }
 
@@ -48,7 +51,7 @@ get_yarns <- function(ids){
   flat_ids <- paste(ids, collapse = '+')
   response <- ravelry_get(path = '/yarns.json', query = list(ids = flat_ids))
 
-  fromJSONtoTibble(response, level = 2)
+  fromJSONtoTibble_mult(response, level = 2)
 
 }
 
@@ -82,6 +85,8 @@ get_yarn_attribute_groups <- function(){
 #' @return tibble containing company details
 #'
 #' @examples search_yarn_companies(query = 'lion')
+#'
+#' @import dplyr
 #'
 #' @export
 #'

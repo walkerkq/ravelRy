@@ -15,4 +15,11 @@ This function retrieves pattern categories.
 \examples{
 get_pattern_categories()
 
+# unnest twice to get two levels of categories
+\dontrun{
+get_pattern_categories() \%>\%
+tidyr::unnest('children', names_sep = '_') \%>\%
+tidyr::unnest('children_children', names_sep = '_') \%>\%
+select(-id, -long_name, -name, -permalink)
+}
 }

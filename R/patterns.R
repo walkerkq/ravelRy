@@ -13,6 +13,9 @@
 #'
 #' # with site search parameters
 #' search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
+#'
+#' @import dplyr
+#'
 #' @export
 #'
 search_patterns <- function(query, page = NULL, page_size = NULL, ...){
@@ -23,7 +26,12 @@ search_patterns <- function(query, page = NULL, page_size = NULL, ...){
                                        page_size = page_size,
                                        ...))
 
-  fromJSONtoTibble(response)
+  response_tibble <- fromJSONtoTibble(response)
+
+  response_tibble %>%
+    select(.data$free, .data$id, .data$name, .data$permalink,
+           .data$designer.id, .data$designer.name,
+           .data$pattern_sources)
 
 }
 
@@ -43,36 +51,7 @@ get_patterns <- function(ids){
 
   response <- ravelry_get(path = 'patterns.json', query = list(ids = paste(ids, collapse = '+')))
 
-  fromJSONtoTibble(response, level = 2)
-
-}
-
-#' Get comments for a pattern
-#'
-#' This function retrieves comments for a pattern using the pattern id.
-#'
-#' @param id a `pattern_id`
-#' @param page result page to retrieve; defaults to first page
-#' @param page_size number of results to retrieve; defaults to 25, max is 100
-#' @param sort sort order; options are `time`, `helpful`
-#' (and `time_`, `helpful_` for descending sort)
-#'
-#' @return tibble
-#'
-#' @examples \dontrun{get_pattern_comments(id = 600, page_size = 10)}
-#'
-#' @export
-
-get_pattern_comments <- function(id, page = NULL, page_size = NULL, sort = NULL){
-
-  # 403 forbidden?
-  response <- ravelry_get(path = paste0('patterns/', id, '/comments.json'),
-                          query = list(page = page,
-                                       page_size = page_size,
-                                       sort = sort))
-
-  #fromJSONtoTibble(response)
-  response
+  fromJSONtoTibble_mult(response, level = 2)
 
 }
 
@@ -84,6 +63,13 @@ get_pattern_comments <- function(id, page = NULL, page_size = NULL, sort = NULL)
 #'
 #' @examples get_pattern_categories()
 #'
+#' # unnest twice to get two levels of categories
+#' \dontrun{
+#' get_pattern_categories() %>%
+#' tidyr::unnest('children', names_sep = '_') %>%
+#' tidyr::unnest('children_children', names_sep = '_') %>%
+#' select(-id, -long_name, -name, -permalink)
+#' }
 #' @export
 #'
 get_pattern_categories <- function(){

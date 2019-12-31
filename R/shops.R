@@ -16,6 +16,8 @@
 #'
 #' @examples search_shops(lat = 42.35, lng = -71.05, radius = 100)
 #'
+#' @import dplyr
+#'
 #' @export
 #'
 search_shops <- function(query = NULL,
@@ -39,7 +41,10 @@ search_shops <- function(query = NULL,
                                        page_size = page_size,
                                        sort = sort))
 
-  fromJSONtoTibble(response)
+  response_tibble <- fromJSONtoTibble(response)
+
+  response_tibble %>%
+    select(-.data$state.id, -.data$country.id)
 
 }
 
