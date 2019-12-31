@@ -20,5 +20,5 @@ search_yarn_companies(query, page = NULL, page_size = NULL,
 tibble
 }
 \description{
-This function retrieves yarn attritube groups.
+This function retrieves yarn companies based on search terms.
 }
