@@ -17,5 +17,7 @@ Language: en-US
 Imports: 
     httr,
     jsonlite,
-    dplyr
+    dplyr,
+    tibble,
+    purrr
 RoxygenNote: 6.1.1

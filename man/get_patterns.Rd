@@ -10,7 +10,7 @@ get_patterns(ids)
 \item{ids}{one or more `pattern_id`s}
 }
 \value{
-API pattern object
+tibble
 }
 \description{
 This function retrieves details for one or multiple patterns using the pattern id.
