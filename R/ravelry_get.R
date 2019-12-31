@@ -13,7 +13,7 @@
 #'
 ravelry_get <- function(path, query = NULL) {
 
-  url <- modify_url(url = api_url, path = path, query = query)
+  url <- modify_url(url = "https://api.ravelry.com/", path = path, query = query)
 
   # undo encoding of plus signs, which are required
   # for methods returning multiple ids
@@ -23,7 +23,8 @@ ravelry_get <- function(path, query = NULL) {
                   authenticate(
                     Sys.getenv('RAVELRY_USERNAME'),
                     Sys.getenv('RAVELRY_PASSWORD')
-                  )
+                  ),
+                  user_agent("http://github.com/walkerkq/ravelRy")
   )
 
   if (http_type(response) != "application/json") {

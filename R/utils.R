@@ -1,6 +1,3 @@
-ua <- httr::user_agent("http://github.com/walkerkq/ravelRy")
-api_url <- "https://api.ravelry.com/"
-
 lists_to_modify <- c('min_needle_size', 'yarn_company', 'yarn_weight', 'min_hook_size', 'max_needle_size', 'max_hook_size', #get_yarns
                      'craft', 'pattern_type', 'pattern_author', # get_patterns
                      'country', 'state' # get_shop
