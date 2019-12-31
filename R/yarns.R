@@ -42,9 +42,7 @@ get_yarns <- function(ids){
   flat_ids <- paste(ids, collapse = '+')
   response <- ravelry_get(path = '/yarns.json', query = list(ids = flat_ids))
 
-  # this is broken - also only returning the first item
-  #fromJSONtoTibble(response)
-  response
+  fromJSONtoTibble(response, level = 2)
 
 }
 
