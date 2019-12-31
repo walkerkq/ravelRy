@@ -4,7 +4,7 @@
 \alias{search_patterns}
 \title{Search for patterns}
 \usage{
-search_patterns(query, page = NULL, page_size = NULL)
+search_patterns(query, page = NULL, page_size = NULL, ...)
 }
 \arguments{
 \item{query}{search string}
@@ -12,6 +12,9 @@ search_patterns(query, page = NULL, page_size = NULL)
 \item{page}{result page to retrieve; defaults to first page}
 
 \item{page_size}{number of results to retrieve; defaults to 100}
+
+\item{...}{pass any other filter parameters available via [site search](https://www.ravelry.com/patterns/search)
+(ex. craft, availability, photo, pa, fit, weight, etc.)}
 }
 \value{
 tibble containing basic pattern details, some nested
@@ -22,4 +25,6 @@ This function retrieves a list of pattern ids and basic details based on search 
 \examples{
 search_patterns(query = 'cowl')
 
+# with site search parameters
+search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
 }

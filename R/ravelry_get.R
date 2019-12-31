@@ -31,3 +31,5 @@ ravelry_get <- function(path, query = NULL) {
   response
 
 }
+
+

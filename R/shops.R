@@ -51,7 +51,7 @@ search_shops <- function(query = NULL,
 #'
 #' @return tibble containing shop info including address, contact info, and other descriptive variables.
 #'
-#' @examples get_shop(id = 1781)
+#' @examples \dontrun{get_shop(id = 1781)}
 #'
 #' @export
 #'

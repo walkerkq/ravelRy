@@ -4,7 +4,7 @@
 \alias{search_yarn}
 \title{Search for yarn}
 \usage{
-search_yarn(query, page = NULL, page_size = NULL, sort = NULL)
+search_yarn(query, page = NULL, page_size = NULL, sort = NULL, ...)
 }
 \arguments{
 \item{query}{search string}
@@ -14,6 +14,9 @@ search_yarn(query, page = NULL, page_size = NULL, sort = NULL)
 \item{page_size}{number of results to retrieve; defaults to 100}
 
 \item{sort}{options: `best`, `rating`, `projects`}
+
+\item{...}{pass any other filter parameters available via [site search](https://www.ravelry.com/yarns/search)
+(ex. weight, needles, photo, fiberc, ya, ratings, origin)}
 }
 \value{
 tibble containing basic pattern details, some nested
@@ -23,5 +26,8 @@ This function retrieves a list of basic yarn details based on search terms.
 }
 \examples{
 search_yarn(query = 'cascade', page_size = 10)
+
+# using site search parameters
+search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')
 
 }

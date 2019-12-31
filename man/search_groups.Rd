@@ -4,7 +4,7 @@
 \alias{search_groups}
 \title{Search groups}
 \usage{
-search_groups(query, page = NULL, page_size = NULL, sort = NULL)
+search_groups(query, page = NULL, page_size = NULL, sort = NULL, ...)
 }
 \arguments{
 \item{query}{search string}
@@ -14,6 +14,9 @@ search_groups(query, page = NULL, page_size = NULL, sort = NULL)
 \item{page_size}{number of results to retrieve; defaults to 50}
 
 \item{sort}{options: `best`, `added`, `favorites`}
+
+\item{...}{pass any other filter parameters available via [site search](https://www.ravelry.com/groups/search)
+(ex. creation, gc)}
 }
 \value{
 tibble containing group information, like name, created_at, short_description, etc.
@@ -22,6 +25,9 @@ tibble containing group information, like name, created_at, short_description, e
 This function retrieves groups based on search terms.
 }
 \examples{
-search_groups(query = 'minneapolis')
+search_groups(query = 'star wars')
+
+# with site search parameters
+search_groups(query = 'star wars', gc = 'knitting')
 
 }

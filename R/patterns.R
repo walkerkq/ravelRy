@@ -5,19 +5,23 @@
 #' @param query search string
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 100
-#'
+#' @param ... pass any other filter parameters available via [site search](https://www.ravelry.com/patterns/search)
+#' (ex. craft, availability, photo, pa, fit, weight, etc.)
 #' @return tibble containing basic pattern details, some nested
 #'
 #' @examples search_patterns(query = 'cowl')
 #'
+#' # with site search parameters
+#' search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
 #' @export
 #'
-search_patterns <- function(query, page = NULL, page_size = NULL){
+search_patterns <- function(query, page = NULL, page_size = NULL, ...){
 
   response <- ravelry_get(path = 'patterns/search.json',
                           query = list(query = query,
                                        page = page,
-                                       page_size = page_size))
+                                       page_size = page_size,
+                                       ...))
 
   fromJSONtoTibble(response)
 

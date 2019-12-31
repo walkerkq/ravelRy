@@ -6,20 +6,26 @@
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 50
 #' @param sort options: `best`, `added`, `favorites`
+#' @param ... pass any other filter parameters available via [site search](https://www.ravelry.com/groups/search)
+#' (ex. creation, gc)
 #'
 #' @return tibble containing group information, like name, created_at, short_description, etc.
 #'
-#' @examples search_groups(query = 'minneapolis')
+#' @examples search_groups(query = 'star wars')
+#'
+#' # with site search parameters
+#' search_groups(query = 'star wars', gc = 'knitting')
 #'
 #' @export
 #'
-search_groups <- function(query, page = NULL, page_size = NULL, sort = NULL){
+search_groups <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
 
   response <- ravelry_get(path = '/groups/search.json',
                           query = list(query = query,
                                        page = page,
                                        page_size = page_size,
-                                       sort = sort))
+                                       sort = sort,
+                                       ...))
 
   fromJSONtoTibble(response)
 

@@ -6,20 +6,26 @@
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 100
 #' @param sort options: `best`, `rating`, `projects`
+#' @param ... pass any other filter parameters available via [site search](https://www.ravelry.com/yarns/search)
+#' (ex. weight, needles, photo, fiberc, ya, ratings, origin)
 #'
 #' @return tibble containing basic pattern details, some nested
 #'
 #' @examples search_yarn(query = 'cascade', page_size = 10)
 #'
+#' # using site search parameters
+#' search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')
+#'
 #' @export
 #'
-search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL){
+search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
 
   response <- ravelry_get(path = '/yarns/search.json',
                           query = list(query = query,
                                        page = page,
                                        page_size = page_size,
-                                       sort = sort))
+                                       sort = sort,
+                                       ...))
 
   fromJSONtoTibble(response)
 

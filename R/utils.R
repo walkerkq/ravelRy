@@ -18,7 +18,6 @@ fromJSONtoTibble <- function(json, level = 1) {
                                        function(x) data.frame(matrix(x, nrow = 1, byrow = TRUE)))
   } else {
     df_transformed <- df[[1]]
-    df_transformed[sapply(df_transformed, is.null)] <- NA
   }
 
   list_df <- purrr::map_if(df_transformed, is.data.frame, list)

@@ -16,6 +16,6 @@ tibble containing shop info including address, contact info, and other descripti
 This function retrieves details for a shop using its id.
 }
 \examples{
-get_shop(id = 1781)
+\dontrun{get_shop(id = 1781)}
 
 }
