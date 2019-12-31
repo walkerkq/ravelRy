@@ -15,6 +15,10 @@ ravelry_get <- function(path, query = NULL) {
 
   url <- modify_url(url = api_url, path = path, query = query)
 
+  # undo encoding of plus signs, which are required
+  # for methods returning multiple ids
+  url <- gsub('\\%2B', '+', url)
+
   response <- GET(url,
                   authenticate(
                     Sys.getenv('RAVELRY_USERNAME'),

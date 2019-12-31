@@ -41,8 +41,7 @@ search_patterns <- function(query, page = NULL, page_size = NULL, ...){
 #'
 get_patterns <- function(ids){
 
-  flat_ids <- paste(ids, collapse = '+')
-  response <- ravelry_get(path = 'patterns.json', query = list(ids = flat_ids))
+  response <- ravelry_get(path = 'patterns.json', query = list(ids = paste(ids, collapse = '+')))
 
   fromJSONtoTibble(response, level = 2)
 
