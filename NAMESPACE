@@ -2,7 +2,6 @@
 
 export(get_designer)
 export(get_pattern_categories)
-export(get_pattern_comments)
 export(get_patterns)
 export(get_shop)
 export(get_yarn_attribute_groups)
@@ -14,4 +13,5 @@ export(search_patterns)
 export(search_shops)
 export(search_yarn)
 export(search_yarn_companies)
+import(dplyr)
 import(httr)
