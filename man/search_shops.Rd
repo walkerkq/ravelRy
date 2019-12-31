@@ -28,7 +28,7 @@ search_shops(query = NULL, shop_type_id = NULL, lat = NULL,
 \item{sort}{options: `best`, `added`, `favorites`}
 }
 \value{
-tibble
+tibble with address, social media, and other descriptive features for shops
 }
 \description{
 This function retrieves shops based on search terms.

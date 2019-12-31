@@ -12,7 +12,7 @@
 #' @param page_size number of results to retrieve; defaults to 100
 #' @param sort options: `best`, `added`, `favorites`
 #'
-#' @return tibble
+#' @return tibble with address, social media, and other descriptive features for shops
 #'
 #' @examples search_shops(lat = 42.35, lng = -71.05, radius = 100)
 #'
