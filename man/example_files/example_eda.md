@@ -6,6 +6,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4)
 library(ravelRy)
 library(tidyverse)
 source('../../../kp_themes/theme_kp.R')
+theme_set(theme_classic() + theme_kp())
 ```
 
 ### Patterns
@@ -49,7 +50,6 @@ pattern_details %>%
   ggplot(aes(x = comments_count, fill = free)) +
   geom_density(alpha = 0.7) +
   labs(title = 'Comment count by free/paid in sample') +
-  theme_kp() + 
   scale_fill_kp()
 ```
 
@@ -67,7 +67,6 @@ pattern_details %>%
   geom_col() +
   labs(title = 'Pattern type by craft in sample',
        x = 'pattern_type_name') +
-  theme_kp() +
   scale_fill_kp()
 ```
 
