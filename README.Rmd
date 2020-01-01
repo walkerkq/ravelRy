@@ -36,9 +36,34 @@ install.packages("ravelRy")
 2. Create an app with basic authentication: read only access.  
 3. Set `RAVELRY_USERNAME` and `RAVELRY_PASSWORD` in your .renviron file or via the console with the `ravelry_auth()` function. 
 
-```{r example, eval = FALSE}
+```{r auth, eval = FALSE}
 library(ravelRy)
 
 ravelry_auth(key = 'username')
 ravelry_auth(key = 'password')
+```
+
+### An example  
+
+Retrieve a list of free patterns for baby hats.  
+
+```{r example_search_patterns}
+library(ravelRy)
+
+search_results <- search_patterns(query = 'hat', page_size = 5, availability = 'free', fit = 'baby')
+search_results
+```
+
+Learn more about the pattern designer.  
+
+```{r example_get_designer}
+designer_id <- search_results$designer.id[2]
+
+get_designer(id = designer_id)  
+```
+
+Get pattern details for those ids.  
+
+```{r example_get_patterns}
+
 ```
