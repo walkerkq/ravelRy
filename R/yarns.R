@@ -30,7 +30,9 @@ search_yarn <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL
   response_tibble <- fromJSONtoTibble(response)
 
   response_tibble %>%
-    select(-starts_with('first_photo'), -.data$personal_attributes)
+    select(-starts_with('first_photo'),
+           -starts_with('yarn_weight'),
+           -.data$personal_attributes)
 
 }
 
