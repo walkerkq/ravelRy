@@ -1,12 +1,12 @@
 fromJSONtoTibble <- function(json) {
 
-  df <- jsonlite::fromJSON(httr::content(json, as = 'text', encoding = 'utf-8'), flatten = TRUE)
+  df <- jsonlite::fromJSON(
+    gsub(':null,', ':\"\",',
+         httr::content(json, as = 'text', encoding = 'utf-8')
+         ),
+    flatten = TRUE)[[1]]
 
-  #list_df <- purrr::map_if(df[[1]], is.data.frame, list)
-
-  tb <- tibble::as_tibble(df[[1]])
-
-  tb
+  tibble::as_tibble(df)
 
 }
 

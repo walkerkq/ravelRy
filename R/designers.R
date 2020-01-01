@@ -14,6 +14,9 @@ get_designer <- function(id){
 
   response <- ravelry_get(path = paste0('/designers/', id, '.json'))
 
-  fromJSONtoTibble(response)
+  response_tibble <- fromJSONtoTibble(response)
+
+  response_tibble %>%
+    select(-starts_with('users'))
 
 }
