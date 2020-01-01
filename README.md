@@ -90,4 +90,4 @@ patterns
 ```
 
 More examples can be found
-[here](%22https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example.md%22).
+[here](https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example_eda.md).

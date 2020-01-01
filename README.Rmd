@@ -61,4 +61,4 @@ patterns <- get_patterns(ids = search_results$id)
 patterns
 ```
 
-More examples can be found [here]("https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example.md").
+More examples can be found [here](https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example_eda.md).
