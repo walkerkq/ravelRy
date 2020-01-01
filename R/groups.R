@@ -18,7 +18,7 @@
 #'
 #' @export
 #'
-search_groups <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
+search_groups <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL, ...){
 
   response <- ravelry_get(path = '/groups/search.json',
                           query = list(query = query,

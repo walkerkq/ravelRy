@@ -4,7 +4,8 @@
 \alias{search_groups}
 \title{Search groups}
 \usage{
-search_groups(query, page = NULL, page_size = NULL, sort = NULL, ...)
+search_groups(query = NULL, page = NULL, page_size = NULL,
+  sort = NULL, ...)
 }
 \arguments{
 \item{query}{search string}

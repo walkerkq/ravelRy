@@ -18,7 +18,7 @@
 #'
 #' @export
 #'
-search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
+search_yarn <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL, ...){
 
   response <- ravelry_get(path = '/yarns/search.json',
                           query = list(query = query,
@@ -89,7 +89,7 @@ get_yarn_attribute_groups <- function(){
 #'
 #' @export
 #'
-search_yarn_companies <- function(query, page = NULL, page_size = NULL, sort = NULL){
+search_yarn_companies <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL){
 
   response <- ravelry_get(path = '/yarn_companies/search.json',
                           query = list(query = query,

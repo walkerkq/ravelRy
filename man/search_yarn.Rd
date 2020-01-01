@@ -4,7 +4,8 @@
 \alias{search_yarn}
 \title{Search for yarn}
 \usage{
-search_yarn(query, page = NULL, page_size = NULL, sort = NULL, ...)
+search_yarn(query = NULL, page = NULL, page_size = NULL,
+  sort = NULL, ...)
 }
 \arguments{
 \item{query}{search string}

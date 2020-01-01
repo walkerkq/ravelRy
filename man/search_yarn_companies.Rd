@@ -4,7 +4,7 @@
 \alias{search_yarn_companies}
 \title{Search yarn companies}
 \usage{
-search_yarn_companies(query, page = NULL, page_size = NULL,
+search_yarn_companies(query = NULL, page = NULL, page_size = NULL,
   sort = NULL)
 }
 \arguments{
