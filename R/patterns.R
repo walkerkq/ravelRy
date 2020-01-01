@@ -5,7 +5,7 @@
 #' @param query search string
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 100
-#' @param ... pass any other filter parameters available via [site search](https://www.ravelry.com/patterns/search)
+#' @param ... pass any other filter parameters available via \url{site search}{https://www.ravelry.com/patterns/search}
 #' (ex. craft, availability, photo, pa, fit, weight, etc.)
 #' @return tibble containing basic pattern details, some nested
 #'

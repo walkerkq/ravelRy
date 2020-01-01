@@ -13,7 +13,7 @@ search_patterns(query, page = NULL, page_size = NULL, ...)
 
 \item{page_size}{number of results to retrieve; defaults to 100}
 
-\item{...}{pass any other filter parameters available via [site search](https://www.ravelry.com/patterns/search)
+\item{...}{pass any other filter parameters available via \url{site search}{https://www.ravelry.com/patterns/search}
 (ex. craft, availability, photo, pa, fit, weight, etc.)}
 }
 \value{
