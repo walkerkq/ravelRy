@@ -50,7 +50,7 @@ get_yarns <- function(ids){
 
   response <- ravelry_get(path = '/yarns.json', query = list(ids = paste(ids, collapse = '+')))
 
-  fromJSONtoTibbleComplex(response)
+  fromJSONtoTibble(response, deep = TRUE)
 
 }
 

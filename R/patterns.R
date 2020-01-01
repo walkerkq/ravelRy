@@ -51,9 +51,7 @@ get_patterns <- function(ids){
 
   response <- ravelry_get(path = 'patterns.json', query = list(ids = paste(ids, collapse = '+')))
 
-  response_tibble <- fromJSONtoTibbleComplex(response)
-
-  response_tibble
+  fromJSONtoTibble(response, deep = TRUE)
 
 }
 
