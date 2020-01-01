@@ -17,11 +17,10 @@ Hex sticker yarn icon by
 
 ## Installation
 
-You can install the released version of ravelRy from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version of ravelRy from Github with:
 
 ``` r
-install.packages("ravelRy")
+devtools::install_github("walkerkq/ravelRy")
 ```
 
 ## Getting started
@@ -69,10 +68,10 @@ patterns
 #>   comments_count created_at currency difficulty_aver… difficulty_count
 #>            <int> <chr>      <chr>               <dbl> <chr>           
 #> 1            156 2009/05/2… ""                   1.52 "4884"          
-#> 2             89 2014/01/2… "USD"                2.41 "2442"          
+#> 2             89 2014/01/2… "USD"                2.41 "2444"          
 #> 3             23 2014/10/2… "USD"                1.84 "1154"          
-#> 4             76 2015/06/0… ""                   2.21 "707"           
-#> 5              1 2019/12/3… ""                   0    ""              
+#> 4             76 2015/06/0… ""                   2.21 "709"           
+#> 5              3 2019/12/3… ""                   0    ""              
 #> # … with 45 more variables: downloadable <lgl>, favorites_count <int>,
 #> #   free <lgl>, gauge <dbl>, gauge_divisor <int>, gauge_pattern <chr>,
 #> #   generally_available <chr>, id <int>, name <chr>, pdf_url <chr>,
