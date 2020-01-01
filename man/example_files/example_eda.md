@@ -13,8 +13,8 @@ source('../../../kp_themes/theme_kp.R')
 Start by retrieving a sample of patterns for babies and their details.
 
 ``` r
-patterns <- search_patterns(page_size = 200, fit = 'baby')
-pattern_details <- get_patterns(ids = patterns$id[1:10])
+patterns <- search_patterns(page_size = 100, fit = 'baby')
+pattern_details <- get_patterns(ids = patterns$id)
 ```
 
 Top 10 designers by pattern count in sample:
@@ -31,16 +31,16 @@ patterns %>%
     ## # A tibble: 10 x 2
     ##    designer.name         n
     ##    <chr>             <int>
-    ##  1 tincanknits          34
-    ##  2 PetiteKnit           13
-    ##  3 Lisa Chemery          8
-    ##  4 Purl Soho             6
-    ##  5 Anna Dervout          5
-    ##  6 Andrea Mowry          4
-    ##  7 Georgie Nicolson      3
-    ##  8 Kelly van Niekerk     3
-    ##  9 Stephanie Lotven      3
-    ## 10 Tanis Lavallee        3
+    ##  1 tincanknits          26
+    ##  2 PetiteKnit            5
+    ##  3 Purl Soho             4
+    ##  4 Anna Dervout          3
+    ##  5 Andrea Mowry          2
+    ##  6 DMC                   2
+    ##  7 Emily Dormier         2
+    ##  8 Helen Stewart         2
+    ##  9 Kelly van Niekerk     2
+    ## 10 Lisa Chemery          2
 
 Look at the density of comments based on the cost of the pattern:
 
@@ -78,8 +78,8 @@ pattern_details %>%
 Start by retrieving a sample of yarns and their details.
 
 ``` r
-yarns <- search_yarn(page_size = 200)
-yarn_details <- get_yarns(ids = yarns$id[20:40])
+yarns <- search_yarn(page_size = 100)
+yarn_details <- get_yarns(ids = yarns$id)
 ```
 
 Get the top rated yarns in the sample:
@@ -92,13 +92,13 @@ yarns %>%
 ```
 
     ## # A tibble: 5 x 3
-    ##      id name            rating_average
-    ##   <int> <chr>                    <dbl>
-    ## 1 65530 Primo Fingering           4.87
-    ## 2 94256 Merino DK                 4.83
-    ## 3 36329 Yowza                     4.83
-    ## 4 54983 Pashmina                  4.81
-    ## 5 62569 Rios                      4.8
+    ##      id name         rating_average
+    ##   <int> <chr>                 <dbl>
+    ## 1 54983 Pashmina               4.81
+    ## 2 62569 Rios                   4.8 
+    ## 3 55637 Tosh Vintage           4.8 
+    ## 4 46836 Rasta                  4.8 
+    ## 5 74654 Arroyo                 4.79
 
 How do fiber types appear together in yarn?
 
@@ -114,7 +114,7 @@ yarn_details %>%
                      order = 'hclust', 
                      tl.col = 'black', 
                      addCoef.col = 'black',
-                     number.cex = 0.75,
+                     number.cex = 0.6,
                      col = colorRampPalette(colors = c(
                        kp_cols('red'), 
                        'white', 

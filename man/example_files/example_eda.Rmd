@@ -15,8 +15,8 @@ source('../../../kp_themes/theme_kp.R')
 Start by retrieving a sample of patterns for babies and their details.  
 
 ```{r}
-patterns <- search_patterns(page_size = 200, fit = 'baby')
-pattern_details <- get_patterns(ids = patterns$id[1:10])
+patterns <- search_patterns(page_size = 100, fit = 'baby')
+pattern_details <- get_patterns(ids = patterns$id)
 ```
 
 Top 10 designers by pattern count in sample:  
@@ -62,8 +62,8 @@ pattern_details %>%
 Start by retrieving a sample of yarns and their details.  
 
 ```{r}
-yarns <- search_yarn(page_size = 200)
-yarn_details <- get_yarns(ids = yarns$id[20:40])
+yarns <- search_yarn(page_size = 100)
+yarn_details <- get_yarns(ids = yarns$id)
 ```
 
 Get the top rated yarns in the sample:  
@@ -89,7 +89,7 @@ yarn_details %>%
                      order = 'hclust', 
                      tl.col = 'black', 
                      addCoef.col = 'black',
-                     number.cex = 0.75,
+                     number.cex = 0.6,
                      col = colorRampPalette(colors = c(
                        kp_cols('red'), 
                        'white', 
