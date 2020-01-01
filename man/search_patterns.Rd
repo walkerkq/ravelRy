@@ -4,7 +4,7 @@
 \alias{search_patterns}
 \title{Search for patterns}
 \usage{
-search_patterns(query, page = NULL, page_size = NULL, ...)
+search_patterns(query = NULL, page = NULL, page_size = NULL, ...)
 }
 \arguments{
 \item{query}{search string}

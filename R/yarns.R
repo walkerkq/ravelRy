@@ -80,22 +80,22 @@ get_yarn_attribute_groups <- function(){
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 48
 #' @param sort options: `best`
+#' @param ... pass any other filter parameters available via \url{https://www.ravelry.com/yarns/brands/search}
 #'
 #' @return tibble containing company details
 #'
 #' @examples search_yarn_companies(query = 'lion')
 #'
-#' @import dplyr
-#'
 #' @export
 #'
-search_yarn_companies <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL){
+search_yarn_companies <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL, ...){
 
   response <- ravelry_get(path = '/yarn_companies/search.json',
                           query = list(query = query,
                                        page = page,
                                        page_size = page_size,
-                                       sort = sort))
+                                       sort = sort,
+                                       ...))
 
   fromJSONtoTibble(response)
 

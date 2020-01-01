@@ -18,7 +18,7 @@
 #'
 #' @export
 #'
-search_patterns <- function(query, page = NULL, page_size = NULL, ...){
+search_patterns <- function(query = NULL, page = NULL, page_size = NULL, ...){
 
   response <- ravelry_get(path = 'patterns/search.json',
                           query = list(query = query,

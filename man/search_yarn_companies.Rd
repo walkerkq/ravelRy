@@ -5,7 +5,7 @@
 \title{Search yarn companies}
 \usage{
 search_yarn_companies(query = NULL, page = NULL, page_size = NULL,
-  sort = NULL)
+  sort = NULL, ...)
 }
 \arguments{
 \item{query}{search string}
@@ -15,6 +15,8 @@ search_yarn_companies(query = NULL, page = NULL, page_size = NULL,
 \item{page_size}{number of results to retrieve; defaults to 48}
 
 \item{sort}{options: `best`}
+
+\item{...}{pass any other filter parameters available via \url{https://www.ravelry.com/yarns/brands/search}}
 }
 \value{
 tibble containing company details
