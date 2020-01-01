@@ -88,3 +88,6 @@ patterns
 #> #   pattern_categories <list>, pattern_attributes <list>,
 #> #   pattern_author <list>, photos <list>, pattern_type <list>
 ```
+
+More examples can be found
+[here](%22https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example.md%22).
