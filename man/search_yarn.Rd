@@ -15,7 +15,7 @@ search_yarn(query, page = NULL, page_size = NULL, sort = NULL, ...)
 
 \item{sort}{options: `best`, `rating`, `projects`}
 
-\item{...}{pass any other filter parameters available via \url{site search}{https://www.ravelry.com/yarns/search}
+\item{...}{pass any other filter parameters available via \url{https://www.ravelry.com/yarns/search}
 (ex. weight, needles, photo, fiberc, ya, ratings, origin)}
 }
 \value{

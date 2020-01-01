@@ -6,7 +6,7 @@
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 100
 #' @param sort options: `best`, `rating`, `projects`
-#' @param ... pass any other filter parameters available via \url{site search}{https://www.ravelry.com/yarns/search}
+#' @param ... pass any other filter parameters available via \url{https://www.ravelry.com/yarns/search}
 #' (ex. weight, needles, photo, fiberc, ya, ratings, origin)
 #'
 #' @return tibble containing basic pattern details, some nested

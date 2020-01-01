@@ -6,7 +6,7 @@
 #' @param page result page to retrieve; defaults to first page
 #' @param page_size number of results to retrieve; defaults to 50
 #' @param sort options: `best`, `added`, `favorites`
-#' @param ... pass any other filter parameters available via \url{site search}{https://www.ravelry.com/groups/search}
+#' @param ... pass any other filter parameters available via \url{https://www.ravelry.com/groups/search}
 #' (ex. creation, gc)
 #'
 #' @return tibble containing group information, like name, created_at, short_description, etc.
