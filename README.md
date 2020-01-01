@@ -60,18 +60,32 @@ search_results
 #> 5 TRUE  585110 Quick … quick-omb…       82906 Emily Dormier <df[,59] [1 × …
 ```
 
-Learn more about the pattern designer.
+Get pattern details for those ids.
 
 ``` r
-designer_id <- search_results$designer.id[2]
-
-get_designer(id = designer_id)  
-#> # A tibble: 1 x 9
-#>   crochet_pattern… favorites_count    id knitting_patter… name 
-#>              <int>           <int> <int>            <int> <chr>
-#> 1               11            1424 21767               85 Kell…
-#> # … with 4 more variables: patterns_count <int>, permalink <chr>,
-#> #   notes <chr>, notes_html <chr>
+patterns <- get_patterns(ids = search_results$id)
+patterns
+#> # A tibble: 5 x 50
+#>   comments_count created_at currency difficulty_aver… difficulty_count
+#>            <int> <chr>      <chr>               <dbl> <chr>           
+#> 1            156 2009/05/2… ""                   1.52 "4884"          
+#> 2             89 2014/01/2… "USD"                2.41 "2442"          
+#> 3             23 2014/10/2… "USD"                1.84 "1154"          
+#> 4             76 2015/06/0… ""                   2.21 "707"           
+#> 5              1 2019/12/3… ""                   0    ""              
+#> # … with 45 more variables: downloadable <lgl>, favorites_count <int>,
+#> #   free <lgl>, gauge <dbl>, gauge_divisor <int>, gauge_pattern <chr>,
+#> #   generally_available <chr>, id <int>, name <chr>, pdf_url <chr>,
+#> #   permalink <chr>, price <chr>, projects_count <int>, published <chr>,
+#> #   queued_projects_count <int>, rating_average <dbl>, rating_count <chr>,
+#> #   row_gauge <dbl>, updated_at <chr>, url <chr>, yardage <int>,
+#> #   yardage_max <int>, personal_attributes <chr>, sizes_available <chr>,
+#> #   product_id <chr>, currency_symbol <chr>, ravelry_download <lgl>,
+#> #   download_location <list>, pdf_in_library <lgl>,
+#> #   volumes_in_library <chr>, gauge_description <chr>,
+#> #   yarn_weight_description <chr>, yardage_description <chr>,
+#> #   pattern_needle_sizes <list>, notes_html <chr>, notes <chr>,
+#> #   packs <list>, printings <list>, yarn_weight <list>, craft <list>,
+#> #   pattern_categories <list>, pattern_attributes <list>,
+#> #   pattern_author <list>, photos <list>, pattern_type <list>
 ```
-
-Get pattern details for those ids.

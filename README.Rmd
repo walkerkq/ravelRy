@@ -54,16 +54,10 @@ search_results <- search_patterns(query = 'hat', page_size = 5, availability = '
 search_results
 ```
 
-Learn more about the pattern designer.  
-
-```{r example_get_designer}
-designer_id <- search_results$designer.id[2]
-
-get_designer(id = designer_id)  
-```
-
 Get pattern details for those ids.  
 
 ```{r example_get_patterns}
-
+patterns <- get_patterns(ids = search_results$id)
+patterns
 ```
+
