@@ -16,6 +16,6 @@ tibble containing yarn details like company, gauge, grams, texture, needle sizes
 This function retrieves details for one or multiple yarns using the yarn id.
 }
 \examples{
-get_yarns(ids = c(600, 601))
+get_yarns(ids = c(66124,54110))
 
 }

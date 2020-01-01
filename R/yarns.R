@@ -42,16 +42,15 @@ search_yarn <- function(query, page = NULL, page_size = NULL, sort = NULL, ...){
 #'
 #' @return tibble containing yarn details like company, gauge, grams, texture, needle sizes, ratings, etc.
 #'
-#' @examples get_yarns(ids = c(600, 601))
+#' @examples get_yarns(ids = c(66124,54110))
 #'
 #' @export
 #'
 get_yarns <- function(ids){
 
-  flat_ids <- paste(ids, collapse = '+')
-  response <- ravelry_get(path = '/yarns.json', query = list(ids = flat_ids))
+  response <- ravelry_get(path = '/yarns.json', query = list(ids = paste(ids, collapse = '+')))
 
-  fromJSONtoTibble_mult(response, level = 2)
+  fromJSONtoTibbleComplex(response)
 
 }
 

@@ -64,7 +64,9 @@ get_shop <- function(id){
 
   response <- ravelry_get(path = paste0('/shops/', id, '.json'))
 
-  fromJSONtoTibble(response)
+  response_tibble <- fromJSONtoTibble(response)
+
+  response_tibble
 
 }
 
