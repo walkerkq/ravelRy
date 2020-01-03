@@ -14,7 +14,7 @@
 #' @examples \dontrun{search_groups(query = 'star wars')}
 #'
 #' # with site search parameters
-#' search_groups(query = 'star wars', gc = 'knitting')
+#' \dontrun{search_groups(query = 'star wars', gc = 'knitting')}
 #'
 #' @export
 #'

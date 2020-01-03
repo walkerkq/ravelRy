@@ -29,6 +29,6 @@ This function retrieves groups based on search terms.
 \dontrun{search_groups(query = 'star wars')}
 
 # with site search parameters
-search_groups(query = 'star wars', gc = 'knitting')
+\dontrun{search_groups(query = 'star wars', gc = 'knitting')}
 
 }
