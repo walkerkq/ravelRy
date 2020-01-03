@@ -13,21 +13,20 @@
 #'
 ravelry_get <- function(path, query = NULL) {
 
-  url <- modify_url(url = "https://api.ravelry.com/", path = path, query = query)
+  url <- httr::modify_url(url = "https://api.ravelry.com/", path = path, query = query)
 
-  # undo encoding of plus signs, which are required
-  # for methods returning multiple ids
+  # undo encoding of plus signs, which are required for methods returning multiple ids
   url <- gsub('\\%2B', '+', url)
 
-  response <- GET(url,
-                  authenticate(
-                    Sys.getenv('RAVELRY_USERNAME'),
-                    Sys.getenv('RAVELRY_PASSWORD')
-                  ),
-                  user_agent("http://github.com/walkerkq/ravelRy")
+  response <- httr::GET(url,
+                        authenticate(
+                          Sys.getenv('RAVELRY_USERNAME'),
+                          Sys.getenv('RAVELRY_PASSWORD')
+                          ),
+                        user_agent("http://github.com/walkerkq/ravelRy")
   )
 
-  if (http_type(response) != "application/json") {
+  if (httr::http_type(response) != "application/json") {
     stop("API did not return json", call. = FALSE)
   } else if(response$status_code != 200) {
     stop(paste0("API returned status ", response$headers$status), call. = FALSE)

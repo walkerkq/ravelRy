@@ -1,8 +1,8 @@
-fromJSONtoTibble <- function(json, deep = FALSE) {
+fromJSONtoTibble <- function(response, deep = FALSE) {
 
   df <- jsonlite::fromJSON(
     gsub(':null', ':\"\"',
-         httr::content(json, as = 'text', encoding = 'utf-8')
+         httr::content(response, as = 'text', encoding = 'utf-8')
          ),
     flatten = TRUE)[[1]]
 
