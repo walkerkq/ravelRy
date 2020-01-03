@@ -26,7 +26,7 @@ tibble containing group information, like name, created_at, short_description, e
 This function retrieves groups based on search terms.
 }
 \examples{
-search_groups(query = 'star wars')
+\dontrun{search_groups(query = 'star wars')}
 
 # with site search parameters
 search_groups(query = 'star wars', gc = 'knitting')

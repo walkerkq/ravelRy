@@ -9,7 +9,7 @@ fromJSONtoTibble <- function(response, deep = FALSE) {
   # handle JSON repsonses where the list is nested under id values
   if(deep == TRUE) {
 
-    response_tibble <- NULL
+    response_tibble <- tibble::tibble(.rows=length(df))
 
     for(l in 1:length(df)) {
 

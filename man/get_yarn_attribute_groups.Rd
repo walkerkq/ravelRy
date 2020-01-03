@@ -13,6 +13,6 @@ tibble containing current attribute groups for yarn.
 This function retrieves yarn attritube groups.
 }
 \examples{
-get_yarn_attribute_groups()
+\dontrun{get_yarn_attribute_groups()}
 
 }

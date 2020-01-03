@@ -11,7 +11,7 @@
 #'
 #' @return tibble containing group information, like name, created_at, short_description, etc.
 #'
-#' @examples search_groups(query = 'star wars')
+#' @examples \dontrun{search_groups(query = 'star wars')}
 #'
 #' # with site search parameters
 #' search_groups(query = 'star wars', gc = 'knitting')

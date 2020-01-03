@@ -9,10 +9,10 @@
 #' (ex. craft, availability, photo, pa, fit, weight, etc.)
 #' @return tibble containing basic pattern details, some nested
 #'
-#' @examples search_patterns(query = 'cowl')
+#' @examples \dontrun{search_patterns(query = 'cowl')}
 #'
 #' # with site search parameters
-#' search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
+#' \dontrun{search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')}
 #'
 #' @import dplyr
 #'
@@ -43,7 +43,7 @@ search_patterns <- function(query = NULL, page = NULL, page_size = NULL, ...){
 #'
 #' @return tibble containing pattern details, like yardage, gauge, count of comments, ratings, etc.
 #'
-#' @examples get_patterns(ids = c(600, 601))
+#' @examples \dontrun{get_patterns(ids = c(600, 601))}
 #'
 #' @export
 #'

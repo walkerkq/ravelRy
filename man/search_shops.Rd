@@ -34,6 +34,6 @@ tibble with address, social media, and other descriptive features for shops
 This function retrieves shops based on search terms.
 }
 \examples{
-search_shops(lat = 42.35, lng = -71.05, radius = 100)
+\dontrun{search_shops(lat = 42.35, lng = -71.05, radius = 100)}
 
 }

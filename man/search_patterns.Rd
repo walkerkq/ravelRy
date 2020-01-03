@@ -23,9 +23,9 @@ tibble containing basic pattern details, some nested
 This function retrieves a list of pattern ids and basic details based on search terms.
 }
 \examples{
-search_patterns(query = 'cowl')
+\dontrun{search_patterns(query = 'cowl')}
 
 # with site search parameters
-search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')
+\dontrun{search_patterns(query = 'hat', page_size = 10, availability = 'free', fit = 'baby')}
 
 }

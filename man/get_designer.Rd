@@ -16,6 +16,6 @@ tibble with name, notes, count of patterns, etc.
 This function retrieves details for a designer using their id.
 }
 \examples{
-get_designer(id = 1)
+\dontrun{get_designer(id = 1)}
 
 }

@@ -6,7 +6,7 @@
 #'
 #' @return tibble with name, notes, count of patterns, etc.
 #'
-#' @examples get_designer(id = 1)
+#' @examples \dontrun{get_designer(id = 1)}
 #'
 #' @export
 #'

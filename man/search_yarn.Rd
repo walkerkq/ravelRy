@@ -26,9 +26,9 @@ tibble containing basic pattern details, some nested
 This function retrieves a list of basic yarn details based on search terms.
 }
 \examples{
-search_yarn(query = 'cascade', page_size = 10)
+\dontrun{search_yarn(query = 'cascade', page_size = 10)}
 
 # using site search parameters
-search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')
+\dontrun{search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')}
 
 }

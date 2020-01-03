@@ -16,6 +16,6 @@ tibble containing pattern details, like yardage, gauge, count of comments, ratin
 This function retrieves details for one or multiple patterns using the pattern id.
 }
 \examples{
-get_patterns(ids = c(600, 601))
+\dontrun{get_patterns(ids = c(600, 601))}
 
 }

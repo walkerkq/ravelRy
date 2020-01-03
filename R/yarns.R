@@ -11,10 +11,10 @@
 #'
 #' @return tibble containing basic pattern details, some nested
 #'
-#' @examples search_yarn(query = 'cascade', page_size = 10)
+#' @examples \dontrun{search_yarn(query = 'cascade', page_size = 10)}
 #'
 #' # using site search parameters
-#' search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')
+#' \dontrun{search_yarn(query = 'cascade', sort = 'best', weight = 'sport', needles = '3.75mm')}
 #'
 #' @export
 #'
@@ -44,7 +44,7 @@ search_yarn <- function(query = NULL, page = NULL, page_size = NULL, sort = NULL
 #'
 #' @return tibble containing yarn details like company, gauge, grams, texture, needle sizes, ratings, etc.
 #'
-#' @examples get_yarns(ids = c(66124,54110))
+#' @examples \dontrun{get_yarns(ids = c(66124,54110))}
 #'
 #' @export
 #'
@@ -62,7 +62,7 @@ get_yarns <- function(ids){
 #'
 #' @return tibble containing current attribute groups for yarn.
 #'
-#' @examples get_yarn_attribute_groups()
+#' @examples \dontrun{get_yarn_attribute_groups()}
 #'
 #' @export
 #'
@@ -86,7 +86,7 @@ get_yarn_attribute_groups <- function(){
 #'
 #' @return tibble containing company details
 #'
-#' @examples search_yarn_companies(query = 'lion')
+#' @examples \dontrun{search_yarn_companies(query = 'lion')}
 #'
 #' @export
 #'

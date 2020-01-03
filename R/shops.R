@@ -14,7 +14,7 @@
 #'
 #' @return tibble with address, social media, and other descriptive features for shops
 #'
-#' @examples search_shops(lat = 42.35, lng = -71.05, radius = 100)
+#' @examples \dontrun{search_shops(lat = 42.35, lng = -71.05, radius = 100)}
 #'
 #' @import dplyr
 #'

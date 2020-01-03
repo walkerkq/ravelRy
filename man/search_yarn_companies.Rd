@@ -25,6 +25,6 @@ tibble containing company details
 This function retrieves yarn companies based on search terms.
 }
 \examples{
-search_yarn_companies(query = 'lion')
+\dontrun{search_yarn_companies(query = 'lion')}
 
 }
