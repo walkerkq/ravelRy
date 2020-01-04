@@ -1,8 +1,11 @@
 
-This package is under
-development.
-
 # ravelRy <img src="man/figures/ravelRy_hex.png" width="160px" align="right" />
+
+<!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.org/walkerkq/ravelRy.svg?branch=master)](https://travis-ci.org/walkerkq/ravelRy)
+<!-- badges: end -->
 
 ravelRy is an R package that provides access to the [Ravelry
 API](https://www.ravelry.com/groups/ravelry-api).
@@ -52,9 +55,9 @@ search_results
 #> # A tibble: 5 x 7
 #>   free      id name    permalink  designer.id designer.name pattern_sources
 #>   <lgl>  <int> <chr>   <chr>            <int> <chr>         <list>         
-#> 1 TRUE  991074 Grit B… grit-baby…       98854 Hobbii Design <df[,59] [1 × …
-#> 2 TRUE  124400 Sockhe… sockhead-…       21767 Kelly McClure <df[,59] [3 × …
-#> 3 TRUE  464893 Garter… garter-ea…       40686 Purl Soho     <df[,59] [1 × …
+#> 1 TRUE  124400 Sockhe… sockhead-…       21767 Kelly McClure <df[,59] [3 × …
+#> 2 TRUE  464893 Garter… garter-ea…       40686 Purl Soho     <df[,59] [1 × …
+#> 3 TRUE  991743 Done i… done-in-o…       57164 Jennifer Pio… <df[,59] [2 × …
 #> 4 TRUE  528611 Classi… classic-c…       40686 Purl Soho     <df[,59] [2 × …
 #> 5 TRUE  585110 Quick … quick-omb…       82906 Emily Dormier <df[,59] [1 × …
 ```
@@ -66,18 +69,18 @@ patterns <- get_patterns(ids = search_results$id)
 patterns
 #> # A tibble: 5 x 50
 #>   comments_count created_at currency difficulty_aver… difficulty_count
-#>            <int> <chr>      <chr>               <dbl> <chr>           
-#> 1            156 2009/05/2… ""                   1.52 "4884"          
-#> 2             89 2014/01/2… "USD"                2.41 "2444"          
-#> 3             23 2014/10/2… "USD"                1.84 "1154"          
-#> 4             76 2015/06/0… ""                   2.21 "709"           
-#> 5              3 2019/12/3… ""                   0    ""              
+#>            <int> <chr>      <chr>               <dbl>            <int>
+#> 1            156 2009/05/2… ""                   1.52             4887
+#> 2             89 2014/01/2… "USD"                2.41             2449
+#> 3             23 2014/10/2… "USD"                1.84             1158
+#> 4             76 2015/06/0… ""                   2.21              712
+#> 5              1 2020/01/0… "USD"                2.25                4
 #> # … with 45 more variables: downloadable <lgl>, favorites_count <int>,
-#> #   free <lgl>, gauge <dbl>, gauge_divisor <int>, gauge_pattern <chr>,
+#> #   free <lgl>, gauge <chr>, gauge_divisor <int>, gauge_pattern <chr>,
 #> #   generally_available <chr>, id <int>, name <chr>, pdf_url <chr>,
 #> #   permalink <chr>, price <chr>, projects_count <int>, published <chr>,
-#> #   queued_projects_count <int>, rating_average <dbl>, rating_count <chr>,
-#> #   row_gauge <dbl>, updated_at <chr>, url <chr>, yardage <int>,
+#> #   queued_projects_count <int>, rating_average <dbl>, rating_count <int>,
+#> #   row_gauge <chr>, updated_at <chr>, url <chr>, yardage <int>,
 #> #   yardage_max <int>, personal_attributes <chr>, sizes_available <chr>,
 #> #   product_id <chr>, currency_symbol <chr>, ravelry_download <lgl>,
 #> #   download_location <list>, pdf_in_library <lgl>,
