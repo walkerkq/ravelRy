@@ -1,12 +1,12 @@
 Package: ravelRy
 Title: An Interface to the Ravelry API 
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Kaylin",
            family = "Pavlik",
            role = c("aut", "cre"),
            email = "walkerkq2@gmail.com")
-Description: ravelRy is an R package that provides access to the Ravelry API. 
+Description: Provides access to the Ravelry API. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
