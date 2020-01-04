@@ -1,5 +1,6 @@
 ## Test environments
 * local OS X install, R 3.6.1
+* ubuntu 16.04 (on travis-ci), R 3.6.1
 * win-builder devel, r77629 (2020-01-03)
 * win-builder release, 3.6.2 (2019-12-12)
 
