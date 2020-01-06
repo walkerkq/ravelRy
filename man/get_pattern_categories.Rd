@@ -7,19 +7,12 @@
 get_pattern_categories()
 }
 \value{
-nested tibble containing category and sub-categories for patterns.
+nested tibble containing three levels of categories and sub-categories for patterns.
 }
 \description{
 This function retrieves pattern categories.
 }
 \examples{
-get_pattern_categories()
+\dontrun{ get_pattern_categories() }
 
-# unnest twice to get two levels of categories
-\dontrun{
-get_pattern_categories() \%>\%
-tidyr::unnest('children', names_sep = '_') \%>\%
-tidyr::unnest('children_children', names_sep = '_') \%>\%
-select(-id, -long_name, -name, -permalink)
-}
 }
