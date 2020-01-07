@@ -39,7 +39,7 @@ search_patterns <- function(query = NULL, page = NULL, page_size = NULL, ...){
 #'
 #' This function retrieves details for one or multiple patterns using the pattern id.
 #'
-#' @param ids one or more `pattern_id`s
+#' @param ids one or more `pattern_id`s. Tested for vectors of up to 500 ids; 100 max recommended.
 #'
 #' @return tibble containing pattern details, like yardage, gauge, count of comments, ratings, etc.
 #'

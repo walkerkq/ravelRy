@@ -18,7 +18,12 @@ fromJSONtoTibble <- function(response, deep = FALSE) {
         purrr::map_if(tibble::is_tibble, list) %>%
         tibble::as_tibble()
 
-      response_tibble <- rbind(response_tibble, tibble_row)
+      if(l == 1){
+        response_tibble <- rbind(response_tibble, tibble_row)
+      } else {
+        # handle responses missing columns with an full outer merge
+        response_tibble <- merge(response_tibble, tibble_row, all = TRUE)
+      }
 
     }
 

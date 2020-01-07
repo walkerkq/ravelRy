@@ -7,7 +7,7 @@
 get_patterns(ids)
 }
 \arguments{
-\item{ids}{one or more `pattern_id`s}
+\item{ids}{one or more `pattern_id`s. Tested for vectors of up to 500 ids; 100 max recommended.}
 }
 \value{
 tibble containing pattern details, like yardage, gauge, count of comments, ratings, etc.
