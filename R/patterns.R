@@ -59,7 +59,7 @@ get_patterns <- function(ids){
 #'
 #' This function retrieves pattern categories.
 #'
-#' @return nested tibble containing three levels of categories and sub-categories for patterns.
+#' @return nested tibble containing levels of categories and sub-categories for patterns.
 #'
 #' @examples \dontrun{ get_pattern_categories() }
 #'
@@ -71,16 +71,7 @@ get_pattern_categories <- function(){
 
   response_tibble <- fromJSONtoTibble(response)
 
-  response_tibble <- response_tibble$children %>%
-    tidyr::unnest(cols = 'children', names_sep = '_') %>%
-    tidyr::unnest(cols = 'children_children', names_sep = '_') %>%
-    select(-starts_with('children_children_children'))
-
-  colnames(response_tibble) <- gsub('children_children_', 'level_3_', colnames(response_tibble))
-  colnames(response_tibble) <- gsub('children_', 'level_2_', colnames(response_tibble))
-  colnames(response_tibble) <- paste('category_', colnames(response_tibble), sep = '')
-
-  response_tibble
+  response_tibble$children
 
 }
 

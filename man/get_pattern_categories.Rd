@@ -7,7 +7,7 @@
 get_pattern_categories()
 }
 \value{
-nested tibble containing three levels of categories and sub-categories for patterns.
+nested tibble containing levels of categories and sub-categories for patterns.
 }
 \description{
 This function retrieves pattern categories.
