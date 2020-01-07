@@ -7,7 +7,7 @@
 #' credentials, you can create them at https://www.ravelry.com/pro/developer.
 #'
 #' @param key the variable to set - either username or password
-#' @param overwrite overwite the existing variable in the current environment?
+#' @param overwrite overwrite the existing variable in the current environment?
 #'
 #' @return atomic character vector containing the username or password credential
 #'

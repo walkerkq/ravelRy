@@ -58,7 +58,7 @@ get_yarns <- function(ids){
 
 #' Get yarn attribute groups
 #'
-#' This function retrieves yarn attritube groups.
+#' This function retrieves yarn attribute groups.
 #'
 #' @return tibble containing current attribute groups for yarn.
 #'

@@ -10,7 +10,7 @@ get_yarn_attribute_groups()
 tibble containing current attribute groups for yarn.
 }
 \description{
-This function retrieves yarn attritube groups.
+This function retrieves yarn attribute groups.
 }
 \examples{
 \dontrun{get_yarn_attribute_groups()}

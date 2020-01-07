@@ -9,7 +9,7 @@ ravelry_auth(key = "username", overwrite = FALSE)
 \arguments{
 \item{key}{the variable to set - either username or password}
 
-\item{overwrite}{overwite the existing variable in the current environment?}
+\item{overwrite}{overwrite the existing variable in the current environment?}
 }
 \value{
 atomic character vector containing the username or password credential
