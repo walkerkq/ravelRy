@@ -4,3 +4,4 @@
 ^LICENSE\.md$
 ^cran-comments\.md$
 ^\.travis\.yml$
+^CRAN-RELEASE$
