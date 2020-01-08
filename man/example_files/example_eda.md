@@ -32,16 +32,16 @@ patterns %>%
     ## # A tibble: 10 x 2
     ##    designer.name         n
     ##    <chr>             <int>
-    ##  1 tincanknits          26
-    ##  2 PetiteKnit            5
-    ##  3 Purl Soho             4
-    ##  4 Anna Dervout          3
+    ##  1 tincanknits          24
+    ##  2 Purl Soho             4
+    ##  3 Anna Dervout          3
+    ##  4 PetiteKnit            3
     ##  5 Andrea Mowry          2
     ##  6 DMC                   2
     ##  7 Emily Dormier         2
     ##  8 Helen Stewart         2
     ##  9 Kelly van Niekerk     2
-    ## 10 Lisa Chemery          2
+    ## 10 Stephanie Lotven      2
 
 Look at the density of comments based on the cost of the pattern:
 
@@ -77,7 +77,7 @@ pattern_details %>%
 Start by retrieving a sample of yarns and their details.
 
 ``` r
-yarns <- search_yarn(page_size = 100)
+yarns <- search_yarn(page_size = 100, sort = 'projects', fiberc = '2')
 yarn_details <- get_yarns(ids = yarns$id)
 ```
 
@@ -91,22 +91,40 @@ yarns %>%
 ```
 
     ## # A tibble: 5 x 3
-    ##      id name         rating_average
-    ##   <int> <chr>                 <dbl>
-    ## 1 54983 Pashmina               4.81
-    ## 2 62569 Rios                   4.8 
-    ## 3 55637 Tosh Vintage           4.8 
-    ## 4 46836 Rasta                  4.8 
-    ## 5 74654 Arroyo                 4.79
+    ##       id name                           rating_average
+    ##    <int> <chr>                                   <dbl>
+    ## 1  14645 Artisan Sock                             4.79
+    ## 2 118765 Twist Light                              4.77
+    ## 3 100150 Alegría                                  4.75
+    ## 4  11111 Silk Cloud                               4.74
+    ## 5  53523 Handgefärbte Sockenwolle 4fach           4.7
 
 How do fiber types appear together in yarn?
 
 ``` r
-yarn_details %>%
+# get the top 10 fiber types 
+top_fiber_types <- yarn_details %>%
   unnest(yarn_fibers, names_sep = '_') %>%
-  pivot_wider(id_cols = 'id', names_from = 'yarn_fibers_fiber_type.name', values_from = 'yarn_fibers_percentage') %>%
+  count(yarn_fibers_fiber_type.name) %>%
+  filter(n > 5) %>%
+  arrange(desc(n)) %>%
+  slice(1:10)
+
+# unnest the yarn_fibers column, bucket fiber names, and spread wide
+yarn_fibers_wide <- yarn_details %>% 
+  unnest(yarn_fibers, names_sep = '_') %>%
+  mutate(yarn_fiber_name = ifelse(yarn_fibers_fiber_type.name %in% top_fiber_types$yarn_fibers_fiber_type.name,
+                                  yarn_fibers_fiber_type.name,
+                                  'Other')) %>%
+  pivot_wider(id_cols = 'id', 
+              names_from = 'yarn_fiber_name', 
+              values_from = 'yarn_fibers_percentage', 
+              values_fn = list(yarn_fibers_percentage = sum)) 
+
+# compute correlation and plot
+yarn_fibers_wide %>%
   select(-id) %>%
-  mutate_if(is.numeric, function(x) ifelse(is.na(x), 0, x)) %>%
+  mutate_if(is.numeric, function(x) ifelse(is.na(x), 0, 1)) %>%
   cor() %>%
   corrplot::corrplot(type = 'upper', 
                      method = 'color', 
@@ -118,8 +136,8 @@ yarn_details %>%
                        kp_cols('red'), 
                        'white', 
                        kp_cols('dark_blue')))(200),
-                     main = 'Yarn Fiber Correlation',
                      mar = c(2,2,2,2),
+                     main = 'Yarn Fiber Correlation',
                      family = 'Avenir')
 ```
 
