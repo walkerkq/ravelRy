@@ -41,8 +41,11 @@ devtools::install_github("walkerkq/ravelRy")
 ```{r auth, eval = FALSE}
 library(ravelRy)
 
-ravelry_auth(key = 'username')
-ravelry_auth(key = 'password')
+ravelry_auth(key = 'username') 
+# you will be prompted to enter your username via the console
+
+ravelry_auth(key = 'password') 
+# you will be prompted to enter your password via the console
 ```
 
 ### An example  
