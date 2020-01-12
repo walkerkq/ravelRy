@@ -56,14 +56,14 @@ Retrieve a list of free patterns for baby hats.
 library(ravelRy)
 
 search_results <- search_patterns(query = 'hat', page_size = 5, availability = 'free', fit = 'baby')
-search_results
+str(search_results, max.level = 1)
 ```
 
 Get pattern details for those ids.  
 
 ```{r example_get_patterns}
 patterns <- get_patterns(ids = search_results$id)
-patterns
+str(patterns, max.level = 1)
 ```
 
 More examples can be found [here](https://github.com/walkerkq/ravelRy/tree/master/man/example_files/example_eda.md).
