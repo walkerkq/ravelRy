@@ -32,16 +32,16 @@ patterns %>%
     ## # A tibble: 10 x 2
     ##    designer.name         n
     ##    <chr>             <int>
-    ##  1 tincanknits          24
-    ##  2 Purl Soho             4
-    ##  3 Anna Dervout          3
+    ##  1 tincanknits          25
+    ##  2 Anna Dervout          4
+    ##  3 Purl Soho             4
     ##  4 PetiteKnit            3
     ##  5 Andrea Mowry          2
     ##  6 DMC                   2
     ##  7 Emily Dormier         2
     ##  8 Helen Stewart         2
     ##  9 Kelly van Niekerk     2
-    ## 10 Stephanie Lotven      2
+    ## 10 Lisa Chemery          2
 
 Look at the density of comments based on the cost of the pattern:
 
@@ -142,3 +142,34 @@ yarn_fibers_wide %>%
 ```
 
 ![](example_eda_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+How do pattern tags associate with difficulty?
+
+``` r
+pattern_details_attributes <- pattern_details %>%
+  unnest(cols = 'pattern_attributes', names_sep = '_') 
+
+top_attributes <- pattern_details_attributes %>%
+  filter(difficulty_count >= 15) %>%
+  count(pattern_attributes_permalink) %>%
+  filter(n >= 10)
+
+attributes_long <- pattern_details_attributes %>% 
+  filter(pattern_attributes_permalink %in% top_attributes$pattern_attributes_permalink) %>%
+  select(id, pattern_attributes_permalink, difficulty_average) 
+
+attributes_long %>%
+  ggplot() +
+  geom_density(aes(x = difficulty_average), fill = '#490B32', color = 'grey') +
+  facet_grid(reorder(pattern_attributes_permalink, difficulty_average, median)~.,switch = 'y') +
+  labs(title = 'Pattern average difficulty rating by pattern tag in sample',
+       y = '', x = 'difficulty_average') +
+  theme_kp() +
+  theme(panel.spacing = unit(-3, "lines"),
+        panel.grid.major.y = element_blank(),
+        strip.text.y = element_text(angle = 180, vjust = 0),
+        strip.background = element_rect(fill = NA, color = NA),
+        axis.text.y = element_blank())
+```
+
+![](example_eda_files/figure-gfm/density-1.png)<!-- -->
