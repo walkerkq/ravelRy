@@ -26,11 +26,18 @@ Hex sticker yarn icon by [Eucalyp](https://www.flaticon.com/authors/eucalyp) via
 
 ## Installation
 
-You can install the development version of ravelRy from Github with: 
+You can install the development version of ravelRy from Github: 
 
 ``` r
 devtools::install_github("walkerkq/ravelRy")
 ```
+
+Or the release via CRAN:
+
+``` r
+install.packages("ravelRy")
+```
+
 
 ## Getting started    
 
